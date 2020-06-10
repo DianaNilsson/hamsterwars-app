@@ -1,0 +1,42 @@
+.h-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #E2F3FA;
+}
+
+.h-header-text-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.h-header-text {
+    flex-grow: 1;
+    background-color: #E2F3FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.h-header-text h1 {
+    font-size: 4.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.h-header-text h2 {
+    font-size: 4.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #7960A2;
+    text-align: right;
+}
+
+.h-header-text h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}

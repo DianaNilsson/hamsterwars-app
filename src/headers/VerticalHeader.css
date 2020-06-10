@@ -1,0 +1,46 @@
+.v-header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #E2F3FA;
+}
+
+.v-header-text {
+    flex-grow: 2;
+    background-color: #E2F3FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.v-header-text h1 {
+    font-size: 5.4rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.v-header-text h2 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #7960A2;
+    text-align: right;
+}
+
+.v-header-text h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.v-header img {
+    width: 100vw;
+}
+
+.bottom-color-filler {
+    flex-grow: 1;
+    background-color: #A895C2;
+}
+

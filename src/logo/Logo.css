@@ -1,0 +1,20 @@
+.logo {
+    padding: 6rem;
+    text-align: center;
+}
+
+.logo img {
+    height: 4rem;
+}
+
+.logo figcaption {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.logo figcaption span {
+    color: #7960A2;
+    font-weight: 800;
+    font-size: 1rem;
+}
