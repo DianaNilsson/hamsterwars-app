@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './Battle.css';
 import checkIcon from './check-icon.png';
-import { Switch, Route, NavLink, useRouteMatch } from "react-router-dom";
+import { Switch, Route, Link, NavLink, useRouteMatch } from "react-router-dom";
 import DuoBattle from './DuoBattle'
 import MultiBattle from './MultiBattle';
 import Tournament from './Tournament';
 import NoMatch from '../no-matches/NoMatch'
+
+import { FaLongArrowAltRight } from 'react-icons/fa'
 
 const Battle = () => {
 
@@ -26,7 +28,7 @@ const Battle = () => {
     return (
 
         <section className="battle-section">
-            <h2 className="heading uppercase">Start a new battle</h2>
+            <h2 className="heading to-uppercase">Start a new battle</h2>
             <div className="choose-battle-type">
                 <h4>Duel</h4>
                 <NavLink to={`${url}/${hamsterIdOne}/${hamsterIdTwo}`} onClick={getHamsters} className="checkbox" activeClassName="checkbox-active">
@@ -42,24 +44,19 @@ const Battle = () => {
                 </NavLink>
             </div>
 
-            <Switch>
-                <Route path={`${path}/tournament`}>
-                    <Tournament />
-                </Route>
-                <Route path={`${path}/multi-battle`}>
-                    <MultiBattle />
-                </Route>
-                <Route path={`${path}/:id1/:id2`}>
-                    <DuoBattle />
-                </Route>
-                {/* <Route path={`matchup/:gameId`}>
-                    <Result />
-                </Route> */}
+            <div className="flexx">
+                <h3 className="subheader">... or go checkout all <Link to="/matchup"><span className="subheader show-result">results</span></Link></h3><FaLongArrowAltRight className="result-arrow" />
+            </div>
 
+
+            <Switch>
+                <Route path={`${path}/tournament`} component={Tournament} />
+                <Route path={`${path}/multi-battle`} component={MultiBattle} />
+                <Route path={`${path}/:id1/:id2`} component={DuoBattle} />
                 {/* <Route path="*" component={NoMatch} /> */}
             </Switch>
 
-        </section>
+        </section >
 
     );
 };

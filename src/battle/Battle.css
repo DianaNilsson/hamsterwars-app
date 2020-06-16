@@ -3,16 +3,11 @@
     text-align: center;
 }
 
-.uppercase {
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-}
-
 .choose-battle-type {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0;
+    margin: 2rem 0 1rem;
 }
 
 .choose-battle-type h4 {
@@ -52,4 +47,21 @@
 
 .checkbox-active .check-icon {
     display: inline;
+}
+
+.flexx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.show-result {
+    text-decoration: underline;
+    margin-left: 0;
+}
+
+.result-arrow {
+    font-size: 1.4rem;
+    fill: #135E88;
 }

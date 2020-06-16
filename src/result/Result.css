@@ -1,0 +1,32 @@
+.table {
+    width: 80%;
+    margin: auto;
+}
+
+.table-header {
+    display: flex;
+    background-color: #135E88;
+    border: 1px solid #135E88;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.table-header h3 {
+    color: #fff;
+}
+
+.table-header > h3:first-of-type {
+    width: 8%;
+}
+
+.table-header > h3:nth-of-type(2) {
+    width: 12%;
+}
+
+.table-header > h3:nth-of-type(3) {
+    flex-grow: 1;
+}
+
+.table-header > h3:last-of-type {
+    width: 10%;
+}

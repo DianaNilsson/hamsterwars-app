@@ -18,7 +18,7 @@ const Navbar = () => {
                 <div className="flex-group">
                     <NavButton navigate="/" icon={<FaHome className="nav-icon" />} name="Home" exact />
                     <NavButton navigate="/battle" icon={<RiSwordLine className="nav-icon" />} name="Battle" />
-                    <NavButton navigate="/test1" icon={<AiOutlineTrophy className="nav-icon" />} name="Podium" />
+                    <NavButton navigate="/matchup" icon={<AiOutlineTrophy className="nav-icon" />} name="Result" />
                 </div>
                 <div className="flex-group">
                     <NavButton navigate="/test2" icon={<IoIosStats className="nav-icon" />} name="Statistics" />

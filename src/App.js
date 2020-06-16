@@ -9,6 +9,7 @@ import Logo from './logo/Logo'
 import Navbar from './navigation/Navbar'
 import Home from './home/Home'
 import Battle from './battle/Battle'
+import Result from './result/Result'
 import Footer from './footer/Footer'
 import NoMatch from './no-matches/NoMatch'
 
@@ -33,6 +34,7 @@ const App = () => {
 
         <Switch>
           <Route path="/battle" component={Battle} />
+          <Route path="/matchup" component={Result} />
           <Route path="/" exact component={Home} />
           <Route path="*" component={NoMatch} />
         </Switch>
