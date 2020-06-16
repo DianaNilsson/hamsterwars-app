@@ -22,6 +22,7 @@ font-family: 'Nanum Pen Script', cursive;
   font-family: 'Roboto', sans-serif;
   color: #333333;
   text-decoration: none;
+  list-style: none;
 }
 
 p{

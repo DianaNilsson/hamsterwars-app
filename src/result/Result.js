@@ -13,21 +13,21 @@ const Result = () => {
 
     const [games, setGames] = useState([]);
 
-    // useEffect(() => {
-    //     let ignore = false;
-    //     if (!gameId) {
-    //         const fetchGames = async () => {
-    //             const response = await fetch(`http://localhost:3001/games`);
-    //             const result = await response.json();
+    useEffect(() => {
+        let ignore = false;
+        if (!gameId) {
+            const fetchGames = async () => {
+                const response = await fetch(`http://localhost:3001/games`);
+                const result = await response.json();
 
-    //             if (!ignore) {
-    //                 setGames(result)
-    //                 return (() => { ignore = true; });
-    //             }
-    //         };
-    //         fetchGames();
-    //     }
-    // }, []);
+                if (!ignore) {
+                    setGames(result)
+                    return (() => { ignore = true; });
+                }
+            };
+            fetchGames();
+        }
+    }, []);
 
     return (
         <section className="result-section">
@@ -41,7 +41,7 @@ const Result = () => {
                             <h3>Winner (contestants)</h3>
                             <h3>View</h3>
                         </div>
-                        <button onClick={() => console.log(games[1].winner.name)}>Render</button>
+                        <button onClick={() => console.log(games[1].timeStamp)}>Render</button>
 
                     </div>
                 </section>
@@ -49,7 +49,7 @@ const Result = () => {
 
 
             <Switch>
-                <Route path={`${path}/:gameid`} component={Matchup} />
+                <Route path={`${path}/:gameId`} component={Matchup} />
             </Switch>
 
         </section>

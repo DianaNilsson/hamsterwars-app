@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import styled from 'styled-components';
 import './DuoBattle.css';
-import { Redirect } from "react-router-dom";
 
 // Styled Components (responsive)
 const Duellist = styled.img`
@@ -30,7 +29,7 @@ const DuoBattle = () => {
         }
     })
 
-    const { id1, id2 } = useParams()
+    const { id1, id2 } = useParams();
 
     const [hamsterOne, setHamsterOne] = useState("");
     const [hamsterTwo, setHamsterTwo] = useState("");
@@ -88,12 +87,12 @@ const DuoBattle = () => {
             <h3 className="subheader">Click on the cutest hamster! </h3>
 
             <div className="duellists-container center">
-                <div className="duellist" onClick={() => postWinner(hamsterTwo)}>
+                <div className="duellist" onClick={() => postWinner(hamsterOne)}>
                     <Duellist src={`http://localhost:3001/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName} width={imageWidth} height={imageHeight} />
                     <button>Select {hamsterOne.name} as winner</button>
                 </div>
                 <h4 className="heading">vs</h4>
-                <div className="duellist" onClick={() => postWinner(hamsterOne)}>
+                <div className="duellist" onClick={() => postWinner(hamsterTwo)}>
                     <Duellist src={`http://localhost:3001/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName} width={imageWidth} height={imageHeight} />
                     <button>Select {hamsterTwo.name} as winner</button>
                 </div>
