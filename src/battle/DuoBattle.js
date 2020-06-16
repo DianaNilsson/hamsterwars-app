@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import styled from 'styled-components';
 import './DuoBattle.css';
+import { Redirect } from "react-router-dom";
 
 // Styled Components (responsive)
 const Duellist = styled.img`
@@ -54,6 +55,31 @@ const DuoBattle = () => {
 
     }, [id1, id2]);
 
+    //GameId
+    const [gameId, setGameId] = useState(null)
+
+    const postWinner = async (winner) => {
+        const config = {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contestants: [hamsterOne, hamsterTwo],
+                winner: winner
+            })
+        };
+
+        try {
+            const response = await fetch(`http://localhost:3001/games`, config);
+            const data = await response.json();
+            setGameId(data.gameId);
+        } catch (error) {
+            return error;
+        }
+    }
+
 
     return (
 
@@ -62,17 +88,20 @@ const DuoBattle = () => {
             <h3 className="subheader">Click on the cutest hamster! </h3>
 
             <div className="duellists-container center">
-                <div className="duellist">
+                <div className="duellist" onClick={() => postWinner(hamsterTwo)}>
                     <Duellist src={`http://localhost:3001/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName} width={imageWidth} height={imageHeight} />
                     <button>Select {hamsterOne.name} as winner</button>
                 </div>
                 <h4 className="heading">vs</h4>
-                <div className="duellist">
+                <div className="duellist" onClick={() => postWinner(hamsterOne)}>
                     <Duellist src={`http://localhost:3001/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName} width={imageWidth} height={imageHeight} />
                     <button>Select {hamsterTwo.name} as winner</button>
                 </div>
+
+                {gameId && <Redirect to={`/matchup/${gameId}`} />}
+
             </div>
-        </section>
+        </section >
 
     );
 };
