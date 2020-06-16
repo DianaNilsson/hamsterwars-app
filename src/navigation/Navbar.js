@@ -13,17 +13,17 @@ import { BsGrid } from 'react-icons/bs';
 const Navbar = () => {
     return (
         <section className="nav-section">
-            <h2>What would you like to start with?</h2>
+            <h2 className="heading">What would you like to do?</h2>
             <nav>
                 <div className="flex-group">
-                    <NavButton navigate="/" icon={<FaHome className="nav-icon" />} name="Home" />
+                    <NavButton navigate="/" icon={<FaHome className="nav-icon" />} name="Home" exact />
                     <NavButton navigate="/battle" icon={<RiSwordLine className="nav-icon" />} name="Battle" />
-                    <NavButton navigate="/" icon={<AiOutlineTrophy className="nav-icon" />} name="Podium" />
+                    <NavButton navigate="/test1" icon={<AiOutlineTrophy className="nav-icon" />} name="Podium" />
                 </div>
                 <div className="flex-group">
-                    <NavButton navigate="/" icon={<IoIosStats className="nav-icon" />} name="Statistics" />
-                    <NavButton navigate="/" icon={<AiOutlineUpload className="nav-icon" />} name="Upload" />
-                    <NavButton navigate="/" icon={<BsGrid className="nav-icon" />} name="Album" />
+                    <NavButton navigate="/test2" icon={<IoIosStats className="nav-icon" />} name="Statistics" />
+                    <NavButton navigate="/test3" icon={<AiOutlineUpload className="nav-icon" />} name="Upload" />
+                    <NavButton navigate="/test4" icon={<BsGrid className="nav-icon" />} name="Album" />
                 </div>
 
             </nav>

@@ -35,32 +35,32 @@ height: 12.06%;
 
 const HorizontalHeader = () => {
 
-    // Responsive image size
+    // Responsive image width
     const [imageWidth, setImageWidth] = useState(`${JSON.stringify(window.innerWidth / 2)}px`)
+
     useEffect(() => {
         function handleResize() {
             setImageWidth(`${JSON.stringify(window.innerWidth / 2)}px`)
         }
         window.addEventListener('resize', handleResize)
 
+        //Clean up
         return _ => {
             window.removeEventListener('resize', handleResize)
         }
     })
 
     // h = horizontal
-    // div = only for styling purposes
     return (
         <header className="h-header">
             <ColorFiller />
             <HorizontalMainHeader width={imageWidth}>
-                <HorizontalHeaderImage src={headerImg} alt="Hero" />
+                <HorizontalHeaderImage src={headerImg} alt="Hamster hero" />
                 <div className="h-header-text-wrapper">
-                    <div className="h-header-text">
+                    <div className="h-header-text center">
                         <hgroup>
                             <h3>It is time for...</h3>
-                            <h1>Hamster-</h1>
-                            <h2>wars</h2>
+                            <h1>Hamster-<span>wars</span></h1>
                         </hgroup>
                     </div>
                     <ColorFillerInner />

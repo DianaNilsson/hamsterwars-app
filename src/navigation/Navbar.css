@@ -1,9 +1,5 @@
-
-.nav-section h2 {
-    font-size: 2.2rem;
-    font-weight: 400;
-    color: #7960A2;
-    text-align: center;
+.nav-section {
+    padding: 2rem 0;
 }
 
 .nav-section nav {

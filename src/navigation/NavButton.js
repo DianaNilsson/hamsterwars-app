@@ -3,11 +3,24 @@ import './NavButton.css';
 import { NavLink } from 'react-router-dom';
 
 const NavButton = (props) => {
+
+    const isExact = props.exact
+
     return (
-        <NavLink exact to={props.navigate} className="nav-button" activeClassName="nav-button-active">
-            <span>{props.icon}</span>
-            <p>{props.name}</p>
-        </NavLink>
+        <>
+            {isExact
+                ?
+                <NavLink to={props.navigate} exact className="nav-button center" activeClassName="nav-button-active">
+                    <span className="nav-icon">{props.icon}</span>
+                    <p>{props.name}</p>
+                </NavLink>
+                :
+                <NavLink to={props.navigate} className="nav-button center" activeClassName="nav-button-active">
+                    <span className="nav-icon">{props.icon}</span>
+                    <p>{props.name}</p>
+                </NavLink>
+            }
+        </>
     );
 };
 

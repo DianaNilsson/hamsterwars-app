@@ -1,0 +1,55 @@
+.battle-section {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.choose-battle-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.choose-battle-type h4 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    overflow: visible;
+    background-color: #fff;
+    border: 1px solid #7960A2;
+    border-radius: 5px;
+    margin: 0 2rem 0 1rem;
+}
+
+.checkbox:last-of-type {
+    margin-right: 0;
+}
+
+.checkbox:hover{
+    border: 2px solid #7960A2;
+}
+
+.checkbox:hover .check-icon {
+    display: inline;
+}
+
+.check-icon {
+    display: none;
+    width: 1.8rem;
+}
+
+.checkbox-active .check-icon {
+    display: inline;
+}

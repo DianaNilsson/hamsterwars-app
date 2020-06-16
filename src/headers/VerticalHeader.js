@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './VerticalHeader.css';
 import headerImg from './header-img.jpg';
-import styled from 'styled-components';
 
 const VerticalHeader = () => {
+
+    //v = vertical
     return (
         <header className="v-header">
-            <div className="v-header-text">
+            <div className="v-header-text center">
                 <hgroup>
                     <h3>It is time for...</h3>
-                    <h1>Hamster-</h1>
-                    <h2>wars</h2>
+                    <h1>Hamster-<span>wars</span></h1>
                 </hgroup>
             </div>
-            <img src={headerImg} alt="Hero" />
+            <img src={headerImg} alt="Hamster hero" />
             <div className="bottom-color-filler" />
-
-        </header>
+        </header >
     );
 };
 
