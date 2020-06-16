@@ -38,8 +38,8 @@ const DuoBattle = () => {
         let ignore = false;
         if (id1 !== id2) {
             const fetchHamsters = async () => {
-                const responseId1 = await fetch(`http://localhost:3001/hamsters/${id1}`);
-                const responseId2 = await fetch(`http://localhost:3001/hamsters/${id2}`);
+                const responseId1 = await fetch(`/hamsters/${id1}`);
+                const responseId2 = await fetch(`/hamsters/${id2}`);
                 const resultId1 = await responseId1.json();
                 const resultId2 = await responseId2.json();
 
@@ -71,7 +71,7 @@ const DuoBattle = () => {
         };
 
         try {
-            const response = await fetch(`http://localhost:3001/games`, config);
+            const response = await fetch(`/games`, config);
             const data = await response.json();
             setGameId(data.gameId);
         } catch (error) {

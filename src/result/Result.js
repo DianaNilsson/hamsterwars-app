@@ -17,7 +17,7 @@ const Result = () => {
         let ignore = false;
         if (!gameId) {
             const fetchGames = async () => {
-                const response = await fetch(`http://localhost:3001/games`);
+                const response = await fetch(`/games`);
                 const result = await response.json();
 
                 if (!ignore) {

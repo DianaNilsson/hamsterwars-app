@@ -18,7 +18,7 @@ const Battle = () => {
     const [hamsterIdTwo, setHamsterIdTwo] = useState("2")
 
     const getHamsters = async () => {
-        const response = await fetch(`http://localhost:3001/hamsters/random/2`);
+        const response = await fetch(`/hamsters/random/2`);
         const result = await response.json();
 
         setHamsterIdOne((result[0].id).toString())

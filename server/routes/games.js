@@ -18,9 +18,36 @@ router.get('/', async (req, res) => {
 
         res.status(200).send(games)
 
-    } catch {
+    } catch (err) {
         console.log(err)
         res.status(500).send(err);
+    }
+})
+
+//Get specific game
+router.get('/:id', async (req, res) => {
+
+    let statusCode = 500;
+
+    try {
+        let game;
+
+        let getGame = await db.collection('games').where("id", "==", req.params.id * 1).get()
+
+        getGame.forEach(doc => {
+            game = (doc.data())
+        })
+
+        //Check if the game is set and send response
+        if (game !== undefined) {
+            res.status(200).send(game)
+        } else {
+            statusCode = 404;
+            throw 'This id does not match any game id, please try again!';
+        }
+    } catch (err) {
+        console.log(err)
+        res.status(statusCode).send(err);
     }
 })
 
@@ -51,7 +78,7 @@ router.post('/', async (req, res) => {
             contestants.push(doc.data());
 
             //Set winner
-            if (doc.data().id == req.body.winner.id) {
+            if (doc.data().id === req.body.winner.id) {
                 winner = doc.data();
                 winnerDocId = doc.id;
             }
@@ -122,7 +149,7 @@ router.post('/', async (req, res) => {
 
         //Send response
         res.status(200).send({
-            msg: `Game finished and ${winner.name} won, congratulations!`
+            gameId
         })
 
     } catch (err) {

@@ -26,7 +26,7 @@ const MultiBattle = () => {
     const startGame = async () => {
         if (numberOfContestants) {
 
-            const response = await fetch(`http://localhost:3001/hamsters/random/${numberOfContestants}`);
+            const response = await fetch(`/hamsters/random/${numberOfContestants}`);
             const result = await response.json();
 
             //Set contestants

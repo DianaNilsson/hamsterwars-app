@@ -11,7 +11,7 @@ const Matchup = () => {
         let ignore = false;
         if (gameId) {
             const fetchGame = async () => {
-                const response = await fetch(`http://localhost:3001/games/${gameId}`);
+                const response = await fetch(`/games/${gameId}`);
                 const result = await response.json();
 
                 if (!ignore) {

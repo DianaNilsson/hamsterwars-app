@@ -23,25 +23,25 @@ app.use('/assets', express.static('hamsters'))
 app.use(express.static(__dirname + '/../build'));
 
 
-//Auth middleware
-let auth = (req, res, next) => {
+// //Auth middleware
+// let auth = (req, res, next) => {
 
-    const APIKey = process.env.KEY;
+//     const APIKey = process.env.KEY;
 
-    if (req.method !== 'GET') {
-        if (APIKey === req.headers['authorization']) {
-            next();
-        } else {
-            res.status(403).send({
-                msg: 'Cant find the correct key'
-            })
-        }
-    } else {
-        next();
-    }
-}
+//     if (req.method !== 'GET') {
+//         if (APIKey === req.headers['authorization']) {
+//             next();
+//         } else {
+//             res.status(403).send({
+//                 msg: 'Cant find the correct key'
+//             })
+//         }
+//     } else {
+//         next();
+//     }
+// }
 
-app.use(auth)
+// app.use(auth)
 
 //Routes
 const hamstersRoute = require('./routes/hamsters');

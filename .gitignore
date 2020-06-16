@@ -25,5 +25,5 @@ yarn-error.log*
 # Server
 /server/node_modules
 /server/config.js
-/server/serviceAccount.json
+# /server/serviceAccount.json
 /server/.env
