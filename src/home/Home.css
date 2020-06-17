@@ -1,0 +1,27 @@
+.home-section {
+    padding: 1rem;
+}
+
+.home-section h3 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.home-section p {
+    width: 60%;
+    margin: 3rem auto;
+    line-height: 1.8;
+}
+
+.home-section p:last-of-type {
+    font-style: italic;
+    font-size: 14px;
+}
+
+.sign-by{
+    position: relative;
+    font-weight: 500;
+    color: #89CBDC;
+    top: 1rem;
+    left: 1rem;
+}
