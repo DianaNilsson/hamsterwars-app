@@ -89,7 +89,7 @@ const MultiBattle = () => {
 
                     <div className="expanded-img-container">
                         <FaChevronLeft onClick={prevHamster} className="prev-hamster" />
-                        <img src={`http://localhost:3001/assets/${expandedHamster.imgName}`} alt="Expanded" className="expanded-img" />
+                        <img src={`/assets/${expandedHamster.imgName}`} alt="Expanded" className="expanded-img" />
                         <FaChevronRight onClick={nextHamster} className="next-hamster" />
                     </div>
 
@@ -99,7 +99,7 @@ const MultiBattle = () => {
                         {contestants.map(contestant => (
                             <figure key={contestant.id} className="hamster-item">
                                 <img
-                                    src={`http://localhost:3001/assets/${contestant.imgName}`}
+                                    src={`/assets/${contestant.imgName}`}
                                     alt="hamster"
                                     onClick={() => { setExpandedHamster(contestant) }}
                                 />

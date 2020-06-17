@@ -88,12 +88,12 @@ const DuoBattle = () => {
 
             <div className="duellists-container center">
                 <div className="duellist" onClick={() => postWinner(hamsterOne)}>
-                    <Duellist src={`http://localhost:3001/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName} width={imageWidth} height={imageHeight} />
+                    <Duellist src={`/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName} width={imageWidth} height={imageHeight} />
                     <button>Select {hamsterOne.name} as winner</button>
                 </div>
                 <h4 className="heading">vs</h4>
                 <div className="duellist" onClick={() => postWinner(hamsterTwo)}>
-                    <Duellist src={`http://localhost:3001/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName} width={imageWidth} height={imageHeight} />
+                    <Duellist src={`/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName} width={imageWidth} height={imageHeight} />
                     <button>Select {hamsterTwo.name} as winner</button>
                 </div>
 
