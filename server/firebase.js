@@ -1,5 +1,5 @@
 const admin = require("firebase-admin");
-const serviceAccount = require("./serviceAccount.json");
+// const serviceAccount = require("./serviceAccount.json");
 
 if (process.env.NODE_ENV === 'production') {
 
