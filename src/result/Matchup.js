@@ -40,9 +40,6 @@ const Matchup = () => {
                                 <li key={contestant.id}>{contestant.name}</li>
                             ))}
                         </ul>
-
-                        {/* <p>Datum {game.timeStamp}</p> */}
-
                     </div>
                 </section>
             }

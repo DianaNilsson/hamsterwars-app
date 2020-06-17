@@ -1,5 +1,5 @@
 .battle-section {
-    padding: 1rem 0;
+    padding: 1rem;
     text-align: center;
 }
 
@@ -49,11 +49,8 @@
     display: inline;
 }
 
-.flexx {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem auto;
+.go-to-result-container {
+    margin: 2rem auto;
 }
 
 .show-result {
