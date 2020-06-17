@@ -11,10 +11,6 @@ font-family: 'Love Ya Like A Sister', cursive;
 font-family: 'Nanum Pen Script', cursive;
 */
 
-/* det funkar fint med env process som ersättning för dotenv */
-
-
-
 *{
   margin: 0;
   padding: 0;
@@ -27,6 +23,7 @@ font-family: 'Nanum Pen Script', cursive;
 
 p{
   font-size: 16px;
+  line-height: 1.5;
 }
 
 @media (max-width: 350px){
