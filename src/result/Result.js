@@ -34,12 +34,12 @@ const Result = () => {
                             <h3>Winner (contestants)</h3>
                             <h3>View</h3>
                         </div>
-                        <button onClick={() => console.log(games)}>Render</button>
 
+                        {/* .filter(maybeGame => !maybeGame.gameCount) */}
                         {games.map(game => (
-                            <div>
-                                <p key={game.id}>{game.id}</p>
-                                {/* <p>{game.winner.name}</p> */}
+                            <div key={game.id}>
+                                <p>{game.id}</p>
+                                <p>{game.winner.name}</p>
                             </div>
                         ))}
 
