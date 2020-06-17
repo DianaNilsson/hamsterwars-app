@@ -91,7 +91,7 @@ router.post('/', async (req, res) => {
 
         //Game id will increase with one for each game
         try {
-            let getCounter = await db.collection('games').doc('counter').get()
+            let getCounter = await db.collection('counter').doc('counter').get()
 
             if (getCounter.data() !== undefined) {
                 gameId = getCounter.data().gameCount + 1;
@@ -119,7 +119,7 @@ router.post('/', async (req, res) => {
         })
 
         //Set the counter (count all games)
-        batch.set(db.collection('games').doc('counter'), {
+        batch.set(db.collection('counter').doc('counter'), {
             gameCount: increment
         }, {
             merge: true

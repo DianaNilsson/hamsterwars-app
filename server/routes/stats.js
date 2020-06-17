@@ -11,7 +11,7 @@ router.get('/total', async (req, res) => {
         let totalGames;
 
         //Get total number of games from fs (no need to return all games, instead I use a counter)
-        let getTotalGames = await db.collection('games').doc('counter').get()
+        let getTotalGames = await db.collection('counter').doc('counter').get()
 
         //Set totalGames
         totalGames = getTotalGames.data().gameCount;
