@@ -1,8 +1,22 @@
 .mainFooter {
-    height: 10rem;
+    padding: 3rem 1rem;
     background-color: #89CBDC;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
+    margin-top: 6rem;
+    text-align: center;
+}
+
+.mainFooter > p {
+    font-size: 14px;
+    padding: 0.2rem;
+}
+
+.github-repo-link {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.github-repo-link:hover {
+    font-size: 1.4rem;
+    fill: #FEE38C;
 }
