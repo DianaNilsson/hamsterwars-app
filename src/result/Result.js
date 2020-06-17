@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './Result.css'
+import './Result.css';
+import moment from 'moment';
 
 const Result = () => {
 
@@ -37,9 +38,11 @@ const Result = () => {
 
                         {/* .filter(maybeGame => !maybeGame.gameCount) */}
                         {games.map(game => (
-                            <div key={game.id}>
+                            <div key={game.id} className="table-row">
                                 <p>{game.id}</p>
                                 <p>{game.winner.name}</p>
+                                <p>{moment.unix(game.timeStamp._seconds).format("MM/DD/YYYY")}</p>
+                                {/* <p>{new Date(game.timeStamp._seconds).toString()}</p> */}
                             </div>
                         ))}
 
