@@ -1,60 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Redirect } from "react-router-dom";
-import styled from 'styled-components';
 import './DuoBattle.css';
 
-// Styled Components (responsive)
-const Duellist = styled.img`
-width: ${props => props.width};
-heiht: ${props => props.height};
-object-fit: cover;
-`
 
 const DuoBattle = () => {
-
-    // Responsive image height
-    const [imageWidth, setImageWidth] = useState(`${JSON.stringify(window.innerWidth * 0.8 * 0.3)}px`)
-    const [imageHeight, setImageHeight] = useState(`${JSON.stringify(window.innerWidth * 0.8 * 0.3 * 0.8)}px`)
-
-    useEffect(() => {
-        function handleResize() {
-            setImageWidth(`${JSON.stringify(window.innerWidth * 0.8 * 0.3)}px`)
-            setImageHeight(`${JSON.stringify(window.innerWidth * 0.8 * 0.3 * 0.8)}px`)
-        }
-        window.addEventListener('resize', handleResize)
-
-        //Clean up
-        return _ => {
-            window.removeEventListener('resize', handleResize)
-        }
-    })
 
     const { id1, id2 } = useParams();
 
     const [hamsterOne, setHamsterOne] = useState("");
     const [hamsterTwo, setHamsterTwo] = useState("");
 
+    //On params changes
     useEffect(() => {
         let ignore = false;
         if (id1 !== id2) {
             const fetchHamsters = async () => {
-                const responseId1 = await fetch(`/hamsters/${id1}`);
-                const responseId2 = await fetch(`/hamsters/${id2}`);
-                const resultId1 = await responseId1.json();
-                const resultId2 = await responseId2.json();
+                try {
+                    const responseId1 = await fetch(`/hamsters/${id1}`);
+                    const responseId2 = await fetch(`/hamsters/${id2}`);
+                    const resultId1 = await responseId1.json();
+                    const resultId2 = await responseId2.json();
 
-                if (!ignore) {
-                    setHamsterOne(resultId1)
-                    setHamsterTwo(resultId2)
-                    return (() => { ignore = true; });
+                    if (!ignore) {
+                        setHamsterOne(resultId1)
+                        setHamsterTwo(resultId2)
+                        return (() => { ignore = true; });
+                    }
+                } catch (error) {
+                    return error;
                 }
             };
             fetchHamsters();
         }
-
     }, [id1, id2]);
 
-    //GameId
+
+    //Post match result
     const [gameId, setGameId] = useState(null)
 
     const postWinner = async (winner) => {
@@ -88,12 +69,12 @@ const DuoBattle = () => {
 
             <div className="duellists-container center">
                 <div className="duellist" onClick={() => postWinner(hamsterOne)}>
-                    <Duellist src={`/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName} width={imageWidth} height={imageHeight} />
+                    <img src={`/assets/${hamsterOne.imgName}`} alt={hamsterOne.imgName} />
                     <button>Select {hamsterOne.name} as winner</button>
                 </div>
                 <h4 className="heading">vs</h4>
                 <div className="duellist" onClick={() => postWinner(hamsterTwo)}>
-                    <Duellist src={`/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName} width={imageWidth} height={imageHeight} />
+                    <img src={`/assets/${hamsterTwo.imgName}`} alt={hamsterTwo.imgName} />
                     <button>Select {hamsterTwo.name} as winner</button>
                 </div>
 
