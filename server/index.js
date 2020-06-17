@@ -5,9 +5,10 @@ const app = express();
 // All post.body > json
 app.use(express.json());
 
-//Solve cors-problem (while fetching local ports)
+//Solve cors-problem (while fetching from local ports)
 const cors = require('cors');
 app.use(cors())
+
 
 //Port constant: Heruko || Local
 const serverPort = process.env.PORT || 3001;
