@@ -39,6 +39,7 @@ const Result = () => {
                         {games.map(game => (
                             <div>
                                 <p key={game.id}>{game.id}</p>
+                                {/* <p>{game.winner.name}</p> */}
                             </div>
                         ))}
 
