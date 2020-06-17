@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useRouteMatch } from "react-router-dom";
 import './Result.css';
 import moment from 'moment';
+import { MdArrowForward } from 'react-icons/md';
 
 const Result = () => {
 
+    const { url } = useRouteMatch();
 
     const [games, setGames] = useState(null);
 
@@ -30,23 +33,23 @@ const Result = () => {
                 <section className="battle-container">
                     <div className="table">
                         <div className="table-header">
-                            <h3>Id</h3>
-                            <h3>Date</h3>
-                            <h3>Winner (contestants)</h3>
-                            <h3>View</h3>
+                            <h3 className="game-id">Id</h3>
+                            <h3 className="game-date">Date</h3>
+                            <h3 className="game-winner">Winner (contestants)</h3>
+                            <h3 className="display-game-result">View</h3>
                         </div>
 
-                        {/* .filter(maybeGame => !maybeGame.gameCount) */}
                         {games.map(game => (
                             <div key={game.id} className="table-row">
-                                <p>{game.id}</p>
-                                <p>{game.winner.name}</p>
-                                <p>{moment.unix(game.timeStamp._seconds).format("MM/DD/YYYY")}</p>
-                                {/* <p>{new Date(game.timeStamp._seconds).toString()}</p> */}
+                                <p className="game-id">{game.id}</p>
+                                <p className="game-date">{moment.unix(game.timeStamp._seconds).format("MM/DD/YYYY")}</p>
+                                <p className="game-winner">{game.winner.name} ({game.contestants.length})</p>
+                                <Link to={`${url}/${game.id}`} className="display-game-result">
+                                    <MdArrowForward className="arrow-icon" />
+                                </Link>
+
                             </div>
                         ))}
-
-
                     </div>
                 </section>
             }
