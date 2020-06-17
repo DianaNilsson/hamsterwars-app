@@ -53,6 +53,7 @@ const Battle = () => {
             <Switch>
                 <Route path={`${path}/tournament`} component={Tournament} />
                 <Route path={`${path}/multi-battle`} component={MultiBattle} />
+                {}
                 <Route path={`${path}/:id1/:id2`} component={DuoBattle} />
                 <Route path="*" component={NoMatch} />
             </Switch>

@@ -1,38 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import Matchup from './Matchup'
 import './Result.css'
-import { useParams } from "react-router-dom";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
 
 const Result = () => {
 
-    const { gameId } = useParams()
 
-    //Relative parent path, url match
-    let { path } = useRouteMatch();
-
-    const [games, setGames] = useState([]);
+    const [games, setGames] = useState(null);
 
     useEffect(() => {
         let ignore = false;
-        if (!gameId) {
-            const fetchGames = async () => {
-                const response = await fetch(`/games`);
-                const result = await response.json();
 
-                if (!ignore) {
-                    setGames(result)
-                    return (() => { ignore = true; });
-                }
-            };
-            fetchGames();
-        }
+        const fetchGames = async () => {
+            const response = await fetch(`/games`);
+            const result = await response.json();
+
+            if (!ignore) {
+                setGames(result)
+                return (() => { ignore = true; });
+            }
+        };
+        fetchGames();
+
     }, []);
 
     return (
         <section className="result-section">
             <h2 className="heading to-uppercase">Result</h2>
-            {!gameId && games.length > 0 &&
+            {games &&
                 <section className="battle-container">
                     <div className="table">
                         <div className="table-header">
@@ -41,17 +34,18 @@ const Result = () => {
                             <h3>Winner (contestants)</h3>
                             <h3>View</h3>
                         </div>
-                        <button onClick={() => console.log(games[1].timeStamp)}>Render</button>
+                        <button onClick={() => console.log(games)}>Render</button>
+
+                        {games.map(game => (
+                            <div>
+                                <p key={game.id}>{game.id}</p>
+                            </div>
+                        ))}
+
 
                     </div>
                 </section>
             }
-
-
-            <Switch>
-                <Route path={`${path}/:gameId`} component={Matchup} />
-            </Switch>
-
         </section>
     );
 };
