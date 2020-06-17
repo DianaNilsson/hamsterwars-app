@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Battle.css';
-import checkIcon from './check-icon.png';
-import { Switch, Route, Link, NavLink, useRouteMatch } from "react-router-dom";
-import DuoBattle from './DuoBattle'
+import DuoBattle from './DuoBattle';
 import MultiBattle from './MultiBattle';
 import Tournament from './Tournament';
-import NoMatch from '../no-matches/NoMatch'
+import NoMatch from '../no-matches/NoMatch';
+import checkIcon from './check-icon.png';
+import { Switch, Route, Link, NavLink, useRouteMatch } from "react-router-dom";
+
 
 import { FaLongArrowAltRight } from 'react-icons/fa'
 
@@ -53,7 +54,7 @@ const Battle = () => {
                 <Route path={`${path}/tournament`} component={Tournament} />
                 <Route path={`${path}/multi-battle`} component={MultiBattle} />
                 <Route path={`${path}/:id1/:id2`} component={DuoBattle} />
-                {/* <Route path="*" component={NoMatch} /> */}
+                <Route path="*" component={NoMatch} />
             </Switch>
 
         </section >

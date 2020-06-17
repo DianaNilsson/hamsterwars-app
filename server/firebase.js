@@ -1,5 +1,4 @@
 const admin = require("firebase-admin");
-// const serviceAccount = require("./serviceAccount.json");
 
 if (process.env.NODE_ENV === 'production') {
 
@@ -20,6 +19,8 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 else {
+    const serviceAccount = require("./serviceAccount.json");
+
     admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
         databaseURL: "https://hamsterwars-project.firebaseio.com"
