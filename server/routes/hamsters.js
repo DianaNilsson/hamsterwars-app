@@ -110,11 +110,19 @@ router.post('/', async (req, res) => {
         //All hamsters ids
         let hamsterIds = [];
 
-        //Uniqe hamster id
-        let id = (Math.max(...hamsterIds) + 1);
+        // let id = 41;
+
+        //Get all hamsters ids to set a unique id
+        let getHamsters = await db.collection('hamsters').get();
+        getHamsters.forEach(doc => {
+            hamsterIds.push(doc.data().id);
+
+        })
+
 
         let newHamster = {
-            id: id,
+            //Uniqe hamster id
+            id: (Math.max(...hamsterIds) + 1),
             name: req.body.name,
             age: Number(req.body.age),
             loves: req.body.loves,
@@ -125,16 +133,10 @@ router.post('/', async (req, res) => {
             defeats: 0
         }
 
-        //Set a unique id
-        let getHamsters = await db.collection('hamsters').get();
-        getHamsters.forEach(doc => {
-            hamsterIds.push(doc.data().id);
-        })
-
         //Set new hamster
         await db.collection('hamsters').doc().set(newHamster)
 
-        res.status(200).send(`Hamster ${newHamster.name} has now become a member of the Hamsterswars family`)
+        res.status(200).send({ msg: `Hamster ${newHamster.name} has now become a member of the Hamsterswars family` })
 
     } catch (err) {
         console.log(err)
