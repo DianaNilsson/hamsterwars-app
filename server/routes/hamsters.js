@@ -102,4 +102,45 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+//Post new hamster
+router.post('/', async (req, res) => {
+
+    try {
+
+        //All hamsters ids
+        let hamsterIds = [];
+
+        //Uniqe hamster id
+        let id = (Math.max(...hamsterIds) + 1);
+
+        let newHamster = {
+            id: id,
+            name: req.body.name,
+            age: Number(req.body.age),
+            loves: req.body.loves,
+            favFood: req.body.favFood,
+            imgName: req.body.imgName,
+            games: 0,
+            wins: 0,
+            defeats: 0
+        }
+
+        //Set a unique id
+        let getHamsters = await db.collection('hamsters').get();
+        getHamsters.forEach(doc => {
+            hamsterIds.push(doc.data().id);
+        })
+
+        //Set new hamster
+        await db.collection('hamsters').doc().set(newHamster)
+
+        res.status(200).send(`Hamster ${newHamster.name} has now become a member of the Hamsterswars family`)
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).send(err);
+    }
+
+})
+
 module.exports = router
