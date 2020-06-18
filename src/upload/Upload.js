@@ -4,16 +4,16 @@ import './Upload.css'
 
 const Upload = () => {
 
-    // const [name, setName] = useState('');
-    // const [age, setAge] = useState(null);
-    // const [loves, setLoves] = useState('');
-    // const [favFood, setFavFood] = useState('');
+    const [name, setName] = useState('');
+    const [age, setAge] = useState(null);
+    const [loves, setLoves] = useState('');
+    const [favFood, setFavFood] = useState('');
 
-    // //For css
-    // const [nameStatus, setNameStatus] = useState('');
-    // const [ageStatus, setAgeStatus] = useState('');
-    // const [lovesStatus, setLovesStatus] = useState('');
-    // const [favFoodStatus, setFavFoodStatus] = useState('');
+    //For css
+    const [nameStatus, setNameStatus] = useState('');
+    const [ageStatus, setAgeStatus] = useState('');
+    const [lovesStatus, setLovesStatus] = useState('');
+    const [favFoodStatus, setFavFoodStatus] = useState('');
 
     // //Success message
     // const [successMessage, setSuccessMessage] = useState();
@@ -21,97 +21,100 @@ const Upload = () => {
     // //Fail message
     // const [failMessage, setFailMessage] = useState(false);
 
-    // //Validate name input
-    // const validateNameInput = async (e) => {
-    //     e.preventDefault()
-    //     if (e.target.value.trim().length > 0) {
-    //         setName(e.target.value)
-    //         setNameStatus('input-ok')
-    //     } else {
-    //         setName('')
-    //         setNameStatus('input-not-ok')
-    //     }
-    // }
+    //Validate name input
+    const validateNameInput = async (e) => {
+        e.preventDefault()
+        if (e.target.value.trim().length > 0) {
+            setName(e.target.value)
+            setNameStatus('input-ok')
+        } else {
+            setName('')
+            setNameStatus('input-not-ok')
+        }
+    }
 
-    // //Validate age input
-    // const validateAgeInput = async (e) => {
-    //     e.preventDefault()
-    //     if (Number(e.target.value)) {
-    //         setAge(e.target.value)
-    //         setAgeStatus('input-ok')
-    //     } else {
-    //         setAge(null)
-    //         setAgeStatus('input-not-ok')
-    //     }
-    // }
+    //Validate age input
+    const validateAgeInput = async (e) => {
+        e.preventDefault()
+        if (Number(e.target.value)) {
+            setAge(e.target.value)
+            setAgeStatus('input-ok')
+        } else {
+            setAge(null)
+            setAgeStatus('input-not-ok')
+        }
+    }
 
-    // //Validate loves input
-    // const validateLovesInput = async (e) => {
-    //     e.preventDefault()
-    //     if (e.target.value.trim().length > 0) {
-    //         setLoves(e.target.value)
-    //         setLovesStatus('input-ok')
-    //     } else {
-    //         setLoves('')
-    //         setLovesStatus('input-not-ok')
-    //     }
-    // }
+    //Validate loves input
+    const validateLovesInput = async (e) => {
+        e.preventDefault()
+        if (e.target.value.trim().length > 0) {
+            setLoves(e.target.value)
+            setLovesStatus('input-ok')
+        } else {
+            setLoves('')
+            setLovesStatus('input-not-ok')
+        }
+    }
 
-    // //Validate favFood input
-    // const validateFavFoodInput = async (e) => {
-    //     e.preventDefault()
-    //     if (e.target.value.trim().length > 0) {
-    //         setFavFood(e.target.value)
-    //         setFavFoodStatus('input-ok')
-    //     } else {
-    //         setFavFood('')
-    //         setFavFoodStatus('input-not-ok')
-    //     }
-    // }
+    //Validate favFood input
+    const validateFavFoodInput = async (e) => {
+        e.preventDefault()
+        if (e.target.value.trim().length > 0) {
+            setFavFood(e.target.value)
+            setFavFoodStatus('input-ok')
+        } else {
+            setFavFood('')
+            setFavFoodStatus('input-not-ok')
+        }
+    }
 
-    // //Fetch (post) hamster
-    // const uploadHamster = async (e) => {
+    //Fetch (post) hamster
+    const uploadHamster = async (e) => {
 
-    //     e.preventDefault()
+        e.preventDefault()
 
-    //     if (name && age && loves && favFood) {
+        if (name && age && loves && favFood) {
 
-    //         setFailMessage(false)
+            console.log('test');
 
-    //         const config = {
-    //             method: 'POST',
-    //             headers: {
-    //                 Accept: 'application/json',
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({
-    //                 name, age, loves, favFood
-    //             })
-    //         };
+            // setFailMessage(false)
+
+            // const config = {
+            //     method: 'POST',
+            //     headers: {
+            //         Accept: 'application/json',
+            //         'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify({
+            //         name, age, loves, favFood
+            //     })
+            // };
 
 
-    //         try {
+            // try {
 
-    //             const response = await fetch(`/hamsters`, config);
-    //             const result = await response.json();
-    //             setSuccessMessage(result.msg);
+            //     const response = await fetch(`/hamsters`, config);
+            //     const result = await response.json();
+            //     // setSuccessMessage(result.msg);
 
-    //         } catch (error) {
-    //             return error;
-    //         }
-    //     } else {
-    //         setFailMessage(true)
-    //     }
+            // } catch (error) {
+            //     return error;
+            // }
+        } else {
+            console.log('test')
+            // setFailMessage(true)
+        }
 
-    // }
+    }
 
     return (
         <section className="upload-section">
             <h2 className="heading to-uppercase">Add a new hamster</h2>
 
-            {/* <form onSubmit={e => uploadHamster(e)} className="upload-form">
+            <form onSubmit={e => uploadHamster(e)} className="upload-form">
 
-                {failMessage && <p className="fail-message">We need more information about your hamster, please fill in all fields</p>}
+                {/* {failMessage && <p className="fail-message">We need more information about your hamster, please fill in all fields</p>} */}
 
                 <h4>Name</h4>
                 <input
@@ -154,7 +157,7 @@ const Upload = () => {
 
             </form>
 
-            {successMessage && <p className="playful-heading success-message">{successMessage}<GiPin className="message-pin" /></p>} */}
+            {/* {successMessage && <p className="playful-heading success-message">{successMessage}<GiPin className="message-pin" /></p>} */}
 
         </section>
     );
