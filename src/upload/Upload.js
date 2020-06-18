@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Upload.css'
-// import { GiPin } from 'react-icons/gi'
+import { GiPin } from 'react-icons/gi'
 
 const Upload = () => {
 
@@ -15,11 +15,11 @@ const Upload = () => {
     const [lovesStatus, setLovesStatus] = useState('');
     const [favFoodStatus, setFavFoodStatus] = useState('');
 
-    // //Success message
-    // const [successMessage, setSuccessMessage] = useState();
+    //Success message
+    const [successMessage, setSuccessMessage] = useState();
 
-    // //Fail message
-    // const [failMessage, setFailMessage] = useState(false);
+    //Fail message
+    const [failMessage, setFailMessage] = useState(false);
 
     //Validate name input
     const validateNameInput = async (e) => {
@@ -78,32 +78,32 @@ const Upload = () => {
 
             console.log('test');
 
-            // setFailMessage(false)
+            setFailMessage(false)
 
-            // const config = {
-            //     method: 'POST',
-            //     headers: {
-            //         Accept: 'application/json',
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify({
-            //         name, age, loves, favFood
-            //     })
-            // };
+            const config = {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name, age, loves, favFood
+                })
+            };
 
 
-            // try {
+            try {
 
-            //     const response = await fetch(`/hamsters`, config);
-            //     const result = await response.json();
-            //     // setSuccessMessage(result.msg);
+                const response = await fetch(`/hamsters`, config);
+                const result = await response.json();
+                setSuccessMessage(result.msg);
 
-            // } catch (error) {
-            //     return error;
-            // }
+            } catch (error) {
+                return error;
+            }
         } else {
             console.log('test')
-            // setFailMessage(true)
+            setFailMessage(true)
         }
 
     }
@@ -114,7 +114,7 @@ const Upload = () => {
 
             <form onSubmit={e => uploadHamster(e)} className="upload-form">
 
-                {/* {failMessage && <p className="fail-message">We need more information about your hamster, please fill in all fields</p>} */}
+                {failMessage && <p className="fail-message">We need more information about your hamster, please fill in all fields</p>}
 
                 <h4>Name</h4>
                 <input
@@ -157,7 +157,7 @@ const Upload = () => {
 
             </form>
 
-            {/* {successMessage && <p className="playful-heading success-message">{successMessage}<GiPin className="message-pin" /></p>} */}
+            {successMessage && <p className="playful-heading success-message">{successMessage}<GiPin className="message-pin" /></p>}
 
         </section>
     );
