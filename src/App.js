@@ -34,14 +34,17 @@ const App = () => {
         <Logo />
         <Navbar />
 
-        <Switch>
-          <Route path="/battle" component={Battle} />
-          <Route path="/matchup/:gameId" component={Matchup} />
-          <Route path="/matchup" exact component={Result} />
-          <Route path="/stats" exact component={Stats} />
-          <Route path="/" exact component={Home} />
-          <Route path="*" component={NoMatch} />
-        </Switch>
+        <main>
+          <Switch>
+            <Route path="/battle" component={Battle} />
+            <Route path="/matchup/:gameId" component={Matchup} />
+            <Route path="/matchup" exact component={Result} />
+            <Route path="/stats" exact component={Stats} />
+            <Route path="/" exact component={Home} />
+            <Route path="*" component={NoMatch} />
+          </Switch>
+
+        </main>
 
         <Footer />
 
