@@ -33,7 +33,7 @@ app.use('/games', gamesRoute);
 app.use('/stats', statsRoute);
 
 
-Enter Heroku - app routes through url
+//Enter Heroku - app routes through url
 app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname + '/../build/index.html'), function (err) {
         if (err) {
