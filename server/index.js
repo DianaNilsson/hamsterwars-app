@@ -14,7 +14,7 @@ app.use(cors())
 const serverPort = process.env.PORT || 3001;
 
 //Serve static images 
-app.use('/assets', express.static(__dirname + '/assets'))
+app.use('/assets', express.static(__dirname + '/hamsters'))
 
 // Serve the frontend
 app.use(express.static(__dirname + '/../build'));
