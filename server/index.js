@@ -1,6 +1,7 @@
 //Use Express
 const express = require('express');
 const app = express();
+const path = require('path');
 
 // All post.body > json
 app.use(express.json());
@@ -30,6 +31,16 @@ app.use('/hamsters', hamstersRoute);
 app.use('/charts', chartsRoute);
 app.use('/games', gamesRoute);
 app.use('/stats', statsRoute);
+
+
+// Enter Heroku-app routes through url
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname + '/../build/index.html'), function (err) {
+        if (err) {
+            res.status(500).send(err)
+        }
+    })
+})
 
 
 //Listen to port
