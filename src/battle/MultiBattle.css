@@ -13,15 +13,13 @@
     cursor: pointer;
 }
 
-.select-number-button:hover, .select-number-button:visited {
-    background-color: #135E88;
-    color: #fff;
-}
-
+.select-number-button:hover, 
+.select-number-button:visited, 
 .active {
     background-color: #135E88;
     color: #fff;
 }
+
 
 .start-game-button {
     height: 1.8rem;
@@ -42,34 +40,54 @@
 
 .expanded-img-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-}
-
-.prev-hamster, .next-hamster {
-    background-color: #ebedee;
-    border: 1px solid #ebedee;
-    border-radius: 100px;
-    fill: #fff;
-    font-size: 3rem;
-    padding: 0.4rem;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    margin: 2rem;
+    justify-content: center;
+    margin: 2rem 1rem;
+    cursor: pointer;
 }
 
 .expanded-img {
     width: 30rem;
     height: 25rem;
     object-fit: cover;
-    /* padding: 1rem; */
-    border: 10px solid #fdfbfb;
+    border: 8px solid #fdfbfb;
+    border-bottom: none;
     border-radius: 4px 4px 0 0;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
-.select-winner-button {
+.prev-hamster, 
+.next-hamster {
+    background-color: #ebedee;
+    border: 1px solid #ebedee;
+    border-radius: 100px;
+    fill: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    height: 3.2rem;
+    width: 3.2rem;
+    padding: 0.5rem;
+    margin: 2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.prev-hamster:hover, 
+.next-hamster:hover {
+    height: 3.4rem;
+    width: 3.4rem;
+    background-color: #89CBDC;
+}
+
+.prev-hamster:active, 
+.next-hamster:active {
+    background-color: #e3e6e8;
+}
+
+.set-winner-button {
     width: 30rem;
     height: 3rem;
+    display: block;
     background-color: #fdfbfb;
     border: 1px solid #fdfbfb;
     border-radius: 0 0 4px 4px;
@@ -78,33 +96,68 @@
     cursor: pointer;
 }
 
-/* .select-winner-button:hover,
-.expanded-img:hover .select-winner-button {
+.expanded-img-container:hover .expanded-img,
+.expanded-img-container:hover .set-winner-button {
     background-color: #89CBDC;
-    color: #fff;
-} */
+    border-color:#89CBDC;
+    color: #fff; 
+}
 
 .hamster-items {
-    width: 80%;
-    margin: auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 1rem;
 }
 
+.hamster-item {
+    margin-bottom: 1.5rem;
+}
 
 .hamster-item img {
     height: 5rem;
     width: 5rem;
     object-fit: cover;
-    margin: 0.5rem;
+    margin: 0.6rem;
     border: 1px solid #fdfbfb;
     border-radius: 4px;
+    cursor: pointer;
 }
 
+.hamster-expand {
+    border: 6px solid #89CBDC !important;
+    height: 5.2rem !important;
+    width: 5.2rem !important;
+}
 
 @media (max-width: 1000px){
     .hamster-items {
       flex-wrap: wrap;
     }
+
+    .set-winner-button{
+        width: 25rem;
+    }
+    .expanded-img {
+        width: 25rem;
+        height: 20rem;
+    }
   }
+
+@media (max-width: 750px){
+    .prev-hamster, 
+    .next-hamster{
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    .set-winner-button{
+        width: 20rem;
+    }
+    .expanded-img {
+        width: 20rem;
+        height: 16rem;
+    }
+
+}
