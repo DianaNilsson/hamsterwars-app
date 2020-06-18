@@ -21,7 +21,7 @@ const Navbar = () => {
                     <NavButton navigate="/matchup" icon={<AiOutlineTrophy className="nav-icon" />} name="Result" />
                 </div>
                 <div className="flex-group">
-                    <NavButton navigate="/test2" icon={<IoIosStats className="nav-icon" />} name="Statistics" />
+                    <NavButton navigate="/stats" icon={<IoIosStats className="nav-icon" />} name="Statistics" />
                     <NavButton navigate="/test3" icon={<AiOutlineUpload className="nav-icon" />} name="Upload" />
                     <NavButton navigate="/test4" icon={<BsGrid className="nav-icon" />} name="Album" />
                 </div>
