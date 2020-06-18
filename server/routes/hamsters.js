@@ -127,7 +127,7 @@ router.post('/', async (req, res) => {
             age: Number(req.body.age),
             loves: req.body.loves,
             favFood: req.body.favFood,
-            imgName: req.body.imgName,
+            imgName: 'no-image.png',
             games: 0,
             wins: 0,
             defeats: 0
