@@ -9,6 +9,8 @@ const Upload = () => {
     const [favFood, setFavfood] = useState('Candy');
     const [imgName, setImgName] = useState('hamster-max.jpg');
 
+    const [successMessage, setSuccessMessage] = useState();
+
     const uploadHamster = async () => {
 
         console.log("click")
@@ -25,10 +27,11 @@ const Upload = () => {
         };
 
         try {
-            console.log('startfetch')
+
             const response = await fetch(`/hamsters`, config);
             const result = await response.json();
-            console.log(result.msg)
+            setSuccessMessage(result.msg);
+
         } catch (error) {
             return error;
         }
@@ -39,10 +42,26 @@ const Upload = () => {
         <section className="uploadSection">
             <h2 className="heading to-uppercase">Add a new hamster</h2>
 
-            <button onClick={uploadHamster}>Klick</button>
-            {/* <form action="" className="upload-hamster-form">
+            <form action="" className="upload-form">
+                <h4>Name</h4>
+                <input type="text" name="name" />
 
-            </form> */}
+                <h4>Age</h4>
+                <input type="text" name="name" />
+
+                <h4>Loves</h4>
+                <input type="text" name="name" />
+
+                <h4>Favourite Food</h4>
+                <input type="text" name="name" />
+
+                <h4>Image Name (only name at the moment)</h4>
+                <input type="text" name="name" />
+
+                <button type="submit" className="upload-button">Upload Hamster</button>
+            </form>
+
+            {successMessage && <p className="playful-heading">{successMessage}</p>}
 
         </section>
     );
