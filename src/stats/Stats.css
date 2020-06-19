@@ -2,3 +2,57 @@
     padding: 1rem;
 }
 
+.bottom-hamsters-header {
+    font-size: 1.4rem;
+}
+
+.bottom-container {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 1.5rem;
+}
+
+.bottom-hamster-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.bottom-hamster-item img {
+    height: 3.5rem;
+    width: 3.5rem;
+    object-fit: cover;
+    border: 1px solid #fff;
+    border-radius: 100%;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.bottom-hamster-item img:hover {
+    height:5.4rem;
+    width: 5.4rem;
+    border-radius: 2px;
+}
+
+.bottom-hamster-item p {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.sad-icon {
+    display: block;
+    font-size: 2.5rem;
+    margin: 1rem auto;
+    fill: #FEE38C;
+}
+
+@media (max-width: 500px) {
+    .bottom-hamster-item {
+        margin: 0.85rem;
+    }
+}
