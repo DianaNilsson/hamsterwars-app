@@ -2,24 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Link, useRouteMatch } from "react-router-dom";
 import './Result.css';
 import moment from 'moment';
-import { MdArrowForward } from 'react-icons/md';
+import { RiZoomInLine } from 'react-icons/ri';
 
 const Result = () => {
 
     const { url } = useRouteMatch();
 
     const [games, setGames] = useState(null);
+    const [gameCount, setGameCount] = useState(null);
 
     useEffect(() => {
         let ignore = false;
 
         const fetchGames = async () => {
-            const response = await fetch(`/games`);
-            const result = await response.json();
+            try {
+                const response = await fetch(`/games`);
+                const result = await response.json();
 
-            if (!ignore) {
-                setGames(result)
-                return (() => { ignore = true; });
+                if (!ignore) {
+                    setGames(result)
+                    setGameCount(result.length)
+                    return (() => { ignore = true; });
+                }
+            } catch (err) {
+                return err;
             }
         };
         fetchGames();
@@ -29,6 +35,7 @@ const Result = () => {
     return (
         <section className="result-section">
             <h2 className="heading to-uppercase">Result</h2>
+            {gameCount && <p className="played-games">Played games: {gameCount.toString()}</p>}
             {games &&
                 <section className="battle-container">
                     <div className="table">
@@ -36,7 +43,6 @@ const Result = () => {
                             <h3 className="game-id">Id</h3>
                             <h3 className="game-date">Date</h3>
                             <h3 className="game-winner">Winner (contestants)</h3>
-                            <h3 className="display-game-result">View</h3>
                         </div>
 
                         {games.map(game => (
@@ -44,8 +50,8 @@ const Result = () => {
                                 <p className="game-id">{game.id}</p>
                                 <p className="game-date">{moment.unix(game.timeStamp._seconds).format("MM/DD/YYYY")}</p>
                                 <p className="game-winner">{game.winner.name} ({game.contestants.length})</p>
-                                <Link to={`${url}/${game.id}`} className="display-game-result">
-                                    <MdArrowForward className="arrow-icon" />
+                                <Link to={`${url}/${game.id}`} className="to-game-result">
+                                    <RiZoomInLine className="arrow-icon" />
                                 </Link>
 
                             </div>

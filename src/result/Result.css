@@ -1,7 +1,23 @@
+.result-section {
+    padding: 1rem;
+}
+
+.played-games {
+    width: 12rem;
+    margin: 2.4rem auto;
+    text-align: center;
+    padding: 0.25rem 1rem; 
+    background-color: #135E88;
+    border: 1px solid #135E88;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
 .table {
     width: 80%;
     margin: auto;
-    max-height: 80vw;
+    max-height: 80vh;
     overflow-y: scroll;
 }
 
@@ -11,9 +27,9 @@
     border: 1px solid #fff;
     border-bottom: 3px solid #89CBDC;
     border-radius: 3px;
-    padding: 0.4rem 0.8rem;
+    padding: 0.4rem 1rem;
     margin: 0.6rem auto;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .table-header h3 {
@@ -33,8 +49,9 @@
     flex-grow: 1;
 }
 
-.display-game-result {
+.to-game-result {
     width: 10%;
+    text-align: right;
 }
 
 .table-row {
@@ -43,9 +60,9 @@
     background-color: #fff;
     border: 1px solid #fff;
     border-radius: 3px;
-    padding: 0.2rem 0.8rem;
+    padding: 0.2rem 1rem;
     margin: 0.4rem auto;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
 }
 
 .table-row p {
@@ -53,8 +70,14 @@
 }
 
 .arrow-icon {
-    font-size: 15px;
+    font-size: 16px;
     fill: #135E88;
+    cursor: pointer;
+    transition: font-size 0.4s;
+}
+
+.arrow-icon:hover {
+    font-size: 2.5rem;
 }
 
 @media (max-width: 650px){

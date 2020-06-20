@@ -11,12 +11,18 @@ const Matchup = () => {
         let ignore = false;
         if (gameId) {
             const fetchGame = async () => {
-                const response = await fetch(`/games/${gameId}`);
-                const result = await response.json();
 
-                if (!ignore) {
-                    setGame(result)
-                    return (() => { ignore = true; });
+                try {
+                    const response = await fetch(`/games/${gameId}`);
+                    const result = await response.json();
+
+                    if (!ignore) {
+                        setGame(result)
+                        return (() => { ignore = true; });
+                    }
+
+                } catch (err) {
+                    return err
                 }
             };
             fetchGame();
