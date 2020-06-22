@@ -42,20 +42,46 @@ const Result = () => {
                         <div className="table-header">
                             <h3 className="game-id">Id</h3>
                             <h3 className="game-date">Date</h3>
-                            <h3 className="game-winner">Winner (contestants)</h3>
+                            <h3 className="game-winner">Winner</h3>
+                            <h3 className="contestants">Loosers</h3>
                         </div>
 
-                        {games.map(game => (
-                            <div key={game.id} className="table-row">
-                                <p className="game-id">{game.id}</p>
-                                <p className="game-date">{moment.unix(game.timeStamp._seconds).format("MM/DD/YYYY")}</p>
-                                <p className="game-winner">{game.winner.name} ({game.contestants.length})</p>
-                                <Link to={`${url}/${game.id}`} className="to-game-result">
-                                    <RiZoomInLine className="arrow-icon" />
-                                </Link>
+                        {games.map(game => {
 
-                            </div>
-                        ))}
+                            const looserContestants = game.contestants.filter(contestant => contestant.id !== game.winner.id);
+
+                            return (
+                                <div key={game.id} className="table-row">
+                                    <p className="game-id">{game.id}</p>
+                                    <p className="game-date">{moment.unix(game.timeStamp._seconds).format("MM/DD/YYYY")}</p>
+                                    <p className="game-winner">{game.winner.name}</p>
+                                    <p className="contestants">
+                                        {
+                                            looserContestants.slice(0, 3).map((contestant, i, arr) => {
+                                                if (looserContestants.length < 3) {
+                                                    if (arr.length - 1 === i) {
+                                                        return `${contestant.name} `
+                                                    } else {
+                                                        return `${contestant.name}, `
+                                                    }
+                                                } else {
+                                                    if (arr.length - 1 === i) {
+                                                        return `${contestant.name} et al. `
+                                                    } else {
+                                                        return `${contestant.name}, `
+                                                    }
+                                                }
+                                            })
+                                        }
+                                    </p>
+                                    <Link to={`${url}/${game.id}`} className="to-game-result">
+                                        <RiZoomInLine className="arrow-icon" />
+                                    </Link>
+
+                                </div>
+                            )
+                        }
+                        )}
                     </div>
                 </section>
             }
