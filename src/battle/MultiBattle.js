@@ -140,7 +140,16 @@ const MultiBattle = () => {
                         ))}
                     </div>
 
-                    {gameId && <Redirect to={`/matchup/${gameId}`} />}
+                    {gameId &&
+                        <Redirect to={
+                            {
+                                pathname: `/matchup/${gameId}`,
+                                state: {
+                                    from: "battle"
+                                }
+                            }
+                        } />
+                    }
 
                 </section>
             }

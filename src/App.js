@@ -13,6 +13,7 @@ import Result from './result/Result';
 import Matchup from './result/Matchup';
 import Stats from './stats/Stats';
 import Upload from './upload/Upload';
+import Catalog from './catalog/Catalog';
 import Footer from './footer/Footer';
 import NoMatch from './no-matches/NoMatch';
 
@@ -42,6 +43,7 @@ const App = () => {
             <Route path="/matchup" exact component={Result} />
             <Route path="/stats" exact component={Stats} />
             <Route path="/upload" exact component={Upload} />
+            <Route path="/catalog" exact component={Catalog} />
             <Route path="/" exact component={Home} />
             <Route path="*" component={NoMatch} />
           </Switch>

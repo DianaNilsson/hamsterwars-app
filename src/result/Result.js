@@ -74,7 +74,15 @@ const Result = () => {
                                             })
                                         }
                                     </p>
-                                    <Link to={`${url}/${game.id}`} className="to-game-result">
+                                    <Link
+                                        to={{
+                                            pathname: `${url}/${game.id}`,
+                                            state: {
+                                                from: "result"
+                                            }
+                                        }}
+                                        className="to-game-result"
+                                    >
                                         <RiZoomInLine className="arrow-icon" />
                                     </Link>
 

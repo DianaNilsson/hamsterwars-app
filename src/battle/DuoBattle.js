@@ -78,7 +78,16 @@ const DuoBattle = () => {
                     <button>Select {hamsterTwo.name} as winner</button>
                 </div>
 
-                {gameId && <Redirect to={`/matchup/${gameId}`} />}
+                {gameId &&
+                    <Redirect to={
+                        {
+                            pathname: `/matchup/${gameId}`,
+                            state: {
+                                from: "battle"
+                            }
+                        }
+                    } />
+                }
 
             </div>
         </section >
