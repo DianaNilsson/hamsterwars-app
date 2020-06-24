@@ -53,16 +53,15 @@ const Catalog = () => {
     return (
         <section className="catalog-section">
             <h2 className="heading to-uppercase">Catalog</h2>
-            {photo &&
+            {/* {photo &&
                 <section className="center">
 
                     <FaChevronLeft onClick={prevHamster} className="prev-hamster" />
                     <div className="photo-container">
 
-                        {/* Small screens */}
                         <FaChevronLeft onClick={prevHamster} className="prev-hamster prev-hamster-small-screen" />
                         <FaChevronRight onClick={nextHamster} className="next-hamster next-hamster-small-screen" />
-                        {/* ------------ */}
+
 
                         <img src={`/assets/${photo.imgName}`} alt="hamster" />
                         <div className="hamster-info">
@@ -84,7 +83,7 @@ const Catalog = () => {
                     <FaChevronRight onClick={nextHamster} className="next-hamster" />
 
                 </section>
-            }
+            } */}
         </section>
     );
 };

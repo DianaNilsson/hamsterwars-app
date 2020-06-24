@@ -64,7 +64,7 @@
 }
 
 .hamster-info ul:hover {
-    background-color: #135E88;
+    background-color: #A2D6E3;
 }
 
 .hamster-info li {
@@ -73,9 +73,6 @@
     cursor: default;
 }
 
-.hamster-info ul:hover li {
-    color: #fff;
-}
 
 @media (max-width: 750px){
 
