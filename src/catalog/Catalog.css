@@ -1,4 +1,4 @@
-/* .catalog-section {
+.catalog-section {
     padding: 1rem;
 }
 
@@ -18,7 +18,7 @@
     width: 30rem;
     height: 20rem;
     object-fit: cover;
-} */
+}
 
 /* for .prev-hamster, .next-hamster --> checkout battle/MultiBattle.css */
 /* .catalog-section .next-hamster,
