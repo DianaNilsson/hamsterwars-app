@@ -53,7 +53,7 @@ const Catalog = () => {
     return (
         <section className="catalog-section">
             <h2 className="heading to-uppercase">Catalog</h2>
-            {/* {photo &&
+            {photo &&
                 <section className="center">
 
                     <FaChevronLeft onClick={prevHamster} className="prev-hamster" />
@@ -83,7 +83,7 @@ const Catalog = () => {
                     <FaChevronRight onClick={nextHamster} className="next-hamster" />
 
                 </section>
-            } */}
+            }
         </section>
     );
 };
