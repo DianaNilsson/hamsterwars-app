@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Catalog.css';
 
-import { FaChevronLeft } from 'react-icons/fa'
-import { FaChevronRight } from 'react-icons/fa'
+// import { FaChevronLeft } from 'react-icons/fa'
+// import { FaChevronRight } from 'react-icons/fa'
 
 const Catalog = () => {
 
@@ -28,27 +28,27 @@ const Catalog = () => {
         fetchHamsters();
     }, [])
 
-    //Browse in catalog (Next >)
-    const nextHamster = () => {
-        let index = hamsters.indexOf(photo);
+    // //Browse in catalog (Next >)
+    // const nextHamster = () => {
+    //     let index = hamsters.indexOf(photo);
 
-        if (index < (hamsters.length - 1)) {
-            setPhoto(hamsters[index + 1]);
-        } else {
-            setPhoto(hamsters[0])
-        }
-    }
+    //     if (index < (hamsters.length - 1)) {
+    //         setPhoto(hamsters[index + 1]);
+    //     } else {
+    //         setPhoto(hamsters[0])
+    //     }
+    // }
 
-    //Browse in catalog (Prev <)
-    const prevHamster = () => {
-        let index = hamsters.indexOf(photo);
+    // //Browse in catalog (Prev <)
+    // const prevHamster = () => {
+    //     let index = hamsters.indexOf(photo);
 
-        if (index === 0) {
-            setPhoto(hamsters[hamsters.length - 1]);
-        } else {
-            setPhoto(hamsters[index - 1])
-        }
-    }
+    //     if (index === 0) {
+    //         setPhoto(hamsters[hamsters.length - 1]);
+    //     } else {
+    //         setPhoto(hamsters[index - 1])
+    //     }
+    // }
 
     return (
         <section className="catalog-section">
