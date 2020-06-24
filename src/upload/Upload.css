@@ -55,6 +55,7 @@
 .upload-button-inactive {
     background-color: rgba(19, 94, 136, 0.3);
     border: 1px solid rgba(19, 94, 136, 0);
+    cursor: default;
 }
 
 
@@ -62,6 +63,7 @@
     background-color: rgba(19, 94, 136, 1);
     border: 1px solid rgba(19, 94, 136, 1);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
 
 .input-ok {
