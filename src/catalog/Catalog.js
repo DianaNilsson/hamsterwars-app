@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import './Catalog.css';
+// import './Catalog.css';
 
 // import { FaChevronLeft } from 'react-icons/fa'
 // import { FaChevronRight } from 'react-icons/fa'
 
 const Catalog = () => {
 
-    const [hamsters, setHamsters] = useState();
-    const [photo, setPhoto] = useState();
+    // const [hamsters, setHamsters] = useState();
+    // const [photo, setPhoto] = useState();
 
-    useEffect(() => {
-        let ignore = false;
-        const fetchHamsters = async () => {
-            try {
-                const response = await fetch(`/hamsters`);
-                const result = await response.json();
+    // useEffect(() => {
+    //     let ignore = false;
+    //     const fetchHamsters = async () => {
+    //         try {
+    //             const response = await fetch(`/hamsters`);
+    //             const result = await response.json();
 
-                if (!ignore) {
-                    setHamsters(result.hamsters)
-                    setPhoto(result.hamsters[0])
-                    return (() => { ignore = true; });
-                }
-            } catch (error) {
-                return error;
-            }
-        };
-        fetchHamsters();
-    }, [])
+    //             if (!ignore) {
+    //                 setHamsters(result.hamsters)
+    //                 setPhoto(result.hamsters[0])
+    //                 return (() => { ignore = true; });
+    //             }
+    //         } catch (error) {
+    //             return error;
+    //         }
+    //     };
+    //     fetchHamsters();
+    // }, [])
 
     // //Browse in catalog (Next >)
     // const nextHamster = () => {
