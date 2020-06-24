@@ -21,7 +21,7 @@
 }
 
 /* for .prev-hamster, .next-hamster --> checkout battle/MultiBattle.css */
-/* .catalog-section .next-hamster,
+.catalog-section .next-hamster,
 .catalog-section .prev-hamster {
     margin-bottom: 20rem;
 }
@@ -73,7 +73,7 @@
     cursor: default;
 }
 
-
+/*
 @media (max-width: 750px){
 
     .catalog-section .next-hamster,
