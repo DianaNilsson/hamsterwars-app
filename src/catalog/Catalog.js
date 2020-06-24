@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import './Catalog.css';
+import './Catalog.css';
 
-// import { FaChevronLeft } from 'react-icons/fa'
-// import { FaChevronRight } from 'react-icons/fa'
+import { FaChevronLeft } from 'react-icons/fa'
+import { FaChevronRight } from 'react-icons/fa'
 
 const Catalog = () => {
 
