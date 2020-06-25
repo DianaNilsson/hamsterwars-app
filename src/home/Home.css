@@ -25,3 +25,9 @@
     top: 1rem;
     left: 1rem;
 }
+
+@media (max-width: 500px){
+    .home-section p {
+        width: 80%;
+    }
+}
