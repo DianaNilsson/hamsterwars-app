@@ -18,7 +18,7 @@ const Catalog = () => {
 
                 if (!ignore) {
                     setHamsters(result.hamsters)
-                    setPhoto(result.hamsters[0])
+                    setPhoto(result.hamsters[5])
                     return (() => { ignore = true; });
                 }
             } catch (error) {

@@ -12,7 +12,7 @@ const Battle = () => {
     let { path, url } = useRouteMatch();
 
     const [hamsterIdOne, setHamsterIdOne] = useState("")
-    const [hamsterIdTwo, setHamsterIdTwo] = useState("s")
+    const [hamsterIdTwo, setHamsterIdTwo] = useState("")
 
     useEffect(() => {
         let ignore = false;
@@ -35,7 +35,7 @@ const Battle = () => {
 
         <section className="battle-section">
             <h2 className="heading to-uppercase">Start a new battle</h2>
-            <div className="choose-battle-type">
+            <nav className="choose-battle-type">
                 <h4>Duel</h4>
                 <NavLink to={`${url}/${hamsterIdOne}/${hamsterIdTwo}`} className="checkbox" activeClassName="checkbox-active">
                     <img src={checkIcon} alt="check" className="check-icon" />
@@ -44,7 +44,7 @@ const Battle = () => {
                 <NavLink to={`${url}/multi-battle`} className="checkbox" activeClassName="checkbox-active">
                     <img src={checkIcon} alt="check" className="check-icon" />
                 </NavLink>
-            </div>
+            </nav>
 
             <div className="center go-to-result-container">
                 <h3 className="subheader">... or checkout all <Link to="/matchup"><span className="subheader show-result">results</span></Link></h3><FaLongArrowAltRight className="result-arrow" />

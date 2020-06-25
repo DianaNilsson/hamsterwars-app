@@ -9,7 +9,6 @@ const Upload = () => {
     const [loves, setLoves] = useState('');
     const [favFood, setFavFood] = useState('');
 
-    //For css
     const [nameStatus, setNameStatus] = useState('');
     const [ageStatus, setAgeStatus] = useState('');
     const [lovesStatus, setLovesStatus] = useState('');
@@ -76,8 +75,6 @@ const Upload = () => {
 
         if (name && age && loves && favFood) {
 
-            console.log('test');
-
             setFailMessage(false)
 
             const config = {
@@ -91,9 +88,7 @@ const Upload = () => {
                 })
             };
 
-
             try {
-
                 const response = await fetch(`/hamsters`, config);
                 const result = await response.json();
                 setSuccessMessage(result.msg);
@@ -101,11 +96,10 @@ const Upload = () => {
             } catch (error) {
                 return error;
             }
+
         } else {
-            console.log('test')
             setFailMessage(true)
         }
-
     }
 
     return (

@@ -15,7 +15,6 @@ import Stats from './stats/Stats';
 import Upload from './upload/Upload';
 import Catalog from './catalog/Catalog';
 import Footer from './footer/Footer';
-import NoMatch from './no-matches/NoMatch';
 
 const App = () => {
 
@@ -45,7 +44,9 @@ const App = () => {
             <Route path="/upload" exact component={Upload} />
             <Route path="/catalog" exact component={Catalog} />
             <Route path="/" exact component={Home} />
-            <Route path="*" component={NoMatch} />
+            <Route path="*">
+              <h2 className="subheader">Hmmm? It seem like the url does not match any existing pages, please try again!</h2>
+            </Route>
           </Switch>
 
         </main>
