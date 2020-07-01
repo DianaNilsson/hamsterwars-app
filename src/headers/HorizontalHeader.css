@@ -4,6 +4,14 @@
     flex-direction: column;
     overflow: hidden;
     background-color: #E2F3FA;
+    position: relative;
+}
+
+.h-header a {
+    position: absolute;
+    bottom:0.5rem;
+    left: 4rem;
+    font-size: 12px;
 }
 
 .h-header-text-wrapper {

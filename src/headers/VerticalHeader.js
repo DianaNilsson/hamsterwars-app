@@ -15,6 +15,7 @@ const VerticalHeader = () => {
             </div>
             <img src={headerImg} alt="Hamster hero" />
             <div className="bottom-color-filler" />
+            <a href="http://www.freepik.com">Image designed by gstudioimagen / Freepik</a>
         </header >
     );
 };

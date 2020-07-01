@@ -68,6 +68,7 @@ const HorizontalHeader = () => {
                 </div>
             </HorizontalMainHeader>
             <ColorFiller />
+            <a href="http://www.freepik.com">Image: designed by gstudioimagen / Freepik</a>
         </header>
     );
 }
